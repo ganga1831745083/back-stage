@@ -1,6 +1,6 @@
 import { Button, Checkbox, Form, Input, Space } from 'antd';
 import React, { useState, useEffect } from 'react';
-import './login.less';
+import  './login.less';
 const Login: React.FC<any> = (props) => {
     const [from] = Form.useForm();
     return (
