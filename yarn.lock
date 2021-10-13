@@ -3496,7 +3496,7 @@ cliui@^6.0.0:
     strip-ansi "^6.0.0"
     wrap-ansi "^6.2.0"
 
-clone@^2.1.2:
+clone@^2.1.1:
   version "2.1.2"
   resolved "https://registry.nlark.com/clone/download/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
@@ -7136,31 +7136,14 @@ last-call-webpack-plugin@^3.0.0:
     lodash "^4.17.5"
     webpack-sources "^1.1.0"
 
-less-loader@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmmirror.com/less-loader/download/less-loader-6.0.0.tgz#f7833177c2fc3de5014de072d5c26eca0954c1cb"
-  integrity sha1-94Mxd8L8PeUBTeBy1cJuyglUwcs=
+less-loader@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmmirror.com/less-loader/download/less-loader-5.0.0.tgz#498dde3a6c6c4f887458ee9ed3f086a12ad1b466"
+  integrity sha1-SY3eOmxsT4h0WO6e0/CGoSrRtGY=
   dependencies:
-    clone "^2.1.2"
-    less "^3.11.1"
-    loader-utils "^2.0.0"
-    schema-utils "^2.6.6"
-
-less@^3.11.1:
-  version "3.13.1"
-  resolved "https://registry.npmmirror.com/less/download/less-3.13.1.tgz?cache=0&sync_timestamp=1633303222735&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fless%2Fdownload%2Fless-3.13.1.tgz#0ebc91d2a0e9c0c6735b83d496b0ab0583077909"
-  integrity sha1-DryR0qDpwMZzW4PUlrCrBYMHeQk=
-  dependencies:
-    copy-anything "^2.0.1"
-    tslib "^1.10.0"
-  optionalDependencies:
-    errno "^0.1.1"
-    graceful-fs "^4.1.2"
-    image-size "~0.5.0"
-    make-dir "^2.1.0"
-    mime "^1.4.1"
-    native-request "^1.0.5"
-    source-map "~0.6.0"
+    clone "^2.1.1"
+    loader-utils "^1.1.0"
+    pify "^4.0.1"
 
 less@^4.1.2:
   version "4.1.2"
@@ -7724,11 +7707,6 @@ nanomatch@^1.2.9:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
-
-native-request@^1.0.5:
-  version "1.1.0"
-  resolved "https://registry.nlark.com/native-request/download/native-request-1.1.0.tgz?cache=0&sync_timestamp=1630540625007&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fnative-request%2Fdownload%2Fnative-request-1.1.0.tgz#acdb30fe2eefa3e1bc8c54b3a6852e9c5c0d3cb0"
-  integrity sha1-rNsw/i7vo+G8jFSzpoUunFwNPLA=
 
 native-url@^0.2.6:
   version "0.2.6"
@@ -10334,7 +10312,7 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
-schema-utils@^2.6.5, schema-utils@^2.6.6, schema-utils@^2.7.0, schema-utils@^2.7.1:
+schema-utils@^2.6.5, schema-utils@^2.7.0, schema-utils@^2.7.1:
   version "2.7.1"
   resolved "https://registry.nlark.com/schema-utils/download/schema-utils-2.7.1.tgz#1ca4f32d1b24c590c203b8e7a50bf0ea4cd394d7"
   integrity sha1-HKTzLRskxZDCA7jnpQvw6kzTlNc=
@@ -11311,7 +11289,7 @@ tsconfig-paths@^3.11.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@^1.10.0, tslib@^1.8.1:
+tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.nlark.com/tslib/download/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
