@@ -52,6 +52,7 @@ const Login: React.FC<any> = (props) => {
                     name='password'
                     rules={[
                         { 
+                            required:true,
                             type: 'string', 
                             //动态验证
                             validator:(rule,value)=>{
