@@ -1,41 +1,25 @@
-import { Button, Checkbox, Form, Input, message, Space } from 'antd';
+import { Button, Checkbox, Form, Input, Space } from 'antd';
 import React, { useState, useEffect } from 'react';
-import { login } from '../../api/login';
-import  './login.less';
-import {set} from '../../utils/storage'
+import './register.less'
 
-const Login: React.FC<any> = (props) => {
+const Register: React.FC<any> = (props) => {
     const [form] = Form.useForm();
     //提交表单且数据验证成功后回调事件
-    const onFinish = (form:any)=>{
-        login(form.name,form.password).then(response =>{
-            const {code,msg,data} = response.data;
-            if(code===0){
-                //点击下次自动登录
-                if(form.remember){
-                    //设置七天后过期localStorage.setItem(key, val,7*24*60)
-                }else{
-                    
-                }
-                message.success(msg)
-            }else{
-                message.error(msg)
-            }
-        })
+    const onFinish = (form: any) => {
+
     }
     //提交表单且数据验证失败后回调事件	
     const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
     };
     return (
-        <div className='login-box'>
+        <div className='register-box'>
             <Form
                 className='form-box'
-                name='login'
+                name='register'
                 form={form}
                 labelCol={{ span: 8 }}
                 wrapperCol={{ span: 16 }}
-                initialValues={{ remember: true }}
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
@@ -51,12 +35,12 @@ const Login: React.FC<any> = (props) => {
                     label='密码'
                     name='password'
                     rules={[
-                        { 
-                            type: 'string', 
+                        {
+                            type: 'string',
                             //动态验证
-                            validator:(rule,value)=>{
-                                if(value==undefined ||value.length>0 && value.length<6){
-                                    return Promise.reject('密码长度不能小于6位')
+                            validator: (rule, value) => {
+                                if (value==undefined || value.length<6) {
+                                    return Promise.reject('密码至少6位')
                                 }
                                 return Promise.resolve()
                             }
@@ -65,22 +49,40 @@ const Login: React.FC<any> = (props) => {
                 >
                     <Input.Password />
                 </Form.Item>
-                <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-                    <Checkbox>下次自动登录</Checkbox>
-                </Form.Item>
-
+                < Form.Item
+                    label='手机号'
+                    name='tel'
+                    rules={[{
+                        validator:(rule,value)=>{
+                            let regu = /^1[3|4|5|7|8][0-9]\d{8}$/
+                            if (value == undefined ||regu.test(value)) {
+                                return Promise.reject('手机号格式不对')
+                            }
+                            return Promise.resolve()
+                        }
+                    }]}
+                >
+                    <Input></Input>
+                </ Form.Item>
+                < Form.Item
+                    label='验证码'
+                    name='Verification'
+                    rules={[{ required: true, message: '验证码不能为空' }]}
+                >
+                    <Input></Input>
+                </ Form.Item>
                 <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                     <Space>
                         <Button type="primary" htmlType="submit">
-                            登录
-                        </Button>
+                            注册
+                    </Button>
                         <Button type="primary" htmlType="reset">
                             重置
-                        </Button>
+                    </Button>
                     </Space>
                 </Form.Item>
             </Form>
         </div>
     )
 }
-export default Login
+export default Register
