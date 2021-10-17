@@ -1,29 +1,21 @@
 import { Layout } from 'antd'
-import {
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
-} from '@ant-design/icons';
-import { Content, Header } from 'antd/lib/layout/layout'
+import { Content } from 'antd/lib/layout/layout'
 import Sider from 'antd/lib/layout/Sider'
 import React, { useState } from 'react'
 import LeftBar from './LeftBar';
+import ViewHeader from './header/ViewHeader'
+import ViewFooter from './footer/ViewFooter'
 import './Applayout.less'
 
 const Applayout: React.FC<any> = (props) => {
-    const [flag, setFlag] = useState<boolean>(false)
     return (
         <Layout className='ant-layout-has-sider ApplayoutBox'>
-            <Sider trigger={null} collapsible collapsed={flag}>
+            <Sider trigger={null} collapsible>
                 <div className="logo" />
                 <LeftBar />
             </Sider>
             <Layout className="site-layout">
-                <Header className="site-layout-background" style={{ padding: 0 }}>
-                    {React.createElement(flag ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                        className: 'trigger',
-                        onClick: () => { setFlag(!flag) },
-                    })}
-                </Header>
+                <ViewHeader></ViewHeader>
                 <Content
                     className="site-layout-background"
                     style={{
@@ -34,6 +26,7 @@ const Applayout: React.FC<any> = (props) => {
                 >
                     {props.children}
                 </Content>
+                <ViewFooter></ViewFooter>
             </Layout>
         </Layout>
     )
