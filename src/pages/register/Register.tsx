@@ -36,6 +36,7 @@ const Register: React.FC<any> = (props) => {
                     name='password'
                     rules={[
                         {
+                            required:true,
                             type: 'string',
                             //动态验证
                             validator: (rule, value) => {
@@ -53,6 +54,7 @@ const Register: React.FC<any> = (props) => {
                     label='手机号'
                     name='tel'
                     rules={[{
+                        required:true,
                         validator:(rule,value)=>{
                             let regu = /^1[3|4|5|7|8][0-9]\d{8}$/
                             if (value == undefined ||regu.test(value)) {

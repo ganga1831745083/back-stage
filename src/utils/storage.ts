@@ -10,3 +10,4 @@ export const set = (key: string, val: string) => {
 export const clear = () => {
     return localStorage.clear()
 }
+
