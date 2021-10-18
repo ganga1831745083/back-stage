@@ -2,12 +2,14 @@ import React, { lazy, ReactNode } from 'react';
 import {
     DashboardOutlined,
     UserOutlined,
+    ApartmentOutlined
 } from '@ant-design/icons';
 const Login = lazy(()=>import('../pages/login/Login'))
 const Register = lazy(()=>import('../pages/register/Register'))
 const Page404 = lazy(()=>import('../pages/Page404'))
 const Dashboard = lazy(()=>import('../pages/index/Dashboard'))
 const UserList = lazy(()=>import('../pages/user/UserList'))
+const SuperList = lazy(()=>import('../pages/user/SuperList'))
 
 export interface IRouter{
     title:string,
@@ -41,6 +43,13 @@ export const AuthRouter:IRouter[]=[
             key:'userlist',
             icon: <UserOutlined />,
             component:<UserList/>, 
+        },{
+             exact:true,
+             path:'/admin/user/superList',
+             title:'管理员列表',
+             key:'superList',
+            icon: <ApartmentOutlined />,
+            component:<SuperList/>
         }]
     }
 ]

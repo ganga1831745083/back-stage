@@ -14,7 +14,7 @@ const LeftBar: React.FC<any> = (props) => {
                         <SubMenu key={r.path} icon={r.icon} title={r.title} >
                             {r.routes.map((list) => {
                                 return(
-                                    <Menu.Item key={list.path} icon={r.icon}>
+                                    <Menu.Item key={list.path} icon={list.icon}>
                                         <Link to={list.path}>{list.title}</Link>
                                     </Menu.Item>
                                 )
