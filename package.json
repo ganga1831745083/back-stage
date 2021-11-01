@@ -52,6 +52,8 @@
     "jest-watch-typeahead": "0.6.1",
     "less-loader": "5.0.0",
     "mini-css-extract-plugin": "0.11.3",
+    "mobx": "^6.3.5",
+    "mobx-react": "^7.2.1",
     "nprogress": "^0.2.0",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
@@ -106,7 +108,10 @@
     ]
   },
   "devDependencies": {
-    "less": "^4.1.2"
+    "@babel/plugin-proposal-decorators": "^7.16.0",
+    "customize-cra": "^1.0.0",
+    "less": "^4.1.2",
+    "react-app-rewired": "^2.1.8"
   },
   "jest": {
     "roots": [
@@ -161,6 +166,9 @@
     "resetMocks": true
   },
   "babel": {
+    "plugins": [
+      ["@babel/plugin-proposal-decorators", { "legacy": true }]
+    ],
     "presets": [
       "react-app"
     ]
