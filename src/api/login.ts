@@ -1,8 +1,8 @@
 import request from '../utils/request';
 export const login = (name:string,password:string)=>{
     return request({
-        url:'/admin/login',
+        url:'/awjProject/login',
         method:'post',
-        data:{name:name,password:password}
+        data:{user_name:name,user_password:password}
     })
 }

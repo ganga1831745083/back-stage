@@ -1,10 +1,11 @@
 import React from 'react'
+import {inject,observer} from 'mobx-react'
 
 const Dashboard:React.FC<any>=(props)=>{
     return(
         <>
-        仪表盘
+            {props.userStore?.username}
         </>
     )
 }
-export default Dashboard;
+export default  inject('userStore')(observer(Dashboard)) 

@@ -1,23 +1,40 @@
 import { Button, Checkbox, Form, Input, message, Space } from 'antd';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import {inject,observer} from 'mobx-react'
 import { login } from '../../api/login';
 import  './login.less';
-import {set} from '../../utils/storage'
+// import UserStore from '../../store/UserStore'
+import {Storage} from '../../utils/storage'
 
 const Login: React.FC<any> = (props) => {
+    let storage = new Storage('');
     const [form] = Form.useForm();
     //提交表单且数据验证成功后回调事件
+    props.userStore?.changeName('awj')
+    console.log(props.userStore?.username);
     const onFinish = (form:any)=>{
-        login(form.name,form.password).then(response =>{
+        login(form.name,form.password).then((response:any) =>{
             const {code,msg,data} = response.data;
             if(code===0){
+                props.userStore?.changeName(data.user_name)
+                console.log(props.userStore?.username);
+                
                 //点击下次自动登录
                 if(form.remember){
                     //设置七天后过期localStorage.setItem(key, val,7*24*60)
+                    storage.setItem({
+                        name:"data",
+                        data:data,
+                        expires:1000*60*60*24*7
+                    })
                 }else{
-                    
+                    storage.setItem({
+                        name:"data",
+                        data:data
+                    })
                 }
-                message.success(msg)
+                message.success('登录成功')
+                window.location.href = '/'
             }else{
                 message.error(msg)
             }
@@ -84,4 +101,4 @@ const Login: React.FC<any> = (props) => {
         </div>
     )
 }
-export default Login
+export default  inject('userStore')(observer(Login)) 

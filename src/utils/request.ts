@@ -5,7 +5,8 @@ import NProgress from 'nprogress'
 import {clear, get} from "./storage";
 // create an axios instance
 const service = axios.create({
-    baseURL: process.env.REACT_APP_BASE_API, // url = base url + request url
+    baseURL:'http://127.0.0.1:8081',
+    // /baseURL: process.env.REACT_APP_BASE_API, // url = base url + request url
     // withCredentials: true, // send cookies when cross-domain requests
     timeout: 5000 // request timeout
 })
