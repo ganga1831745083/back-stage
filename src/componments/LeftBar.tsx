@@ -13,20 +13,24 @@ const LeftBar: React.FC<any> = (props) => {
                     return (
                         <SubMenu key={r.path} icon={r.icon} title={r.title} >
                             {r.routes.map((list) => {
-                                return(
-                                    <Menu.Item key={list.path} icon={list.icon}>
-                                        <Link to={list.path}>{list.title}</Link>
-                                    </Menu.Item>
-                                )
+                                if(list.auth){
+                                    return(
+                                        <Menu.Item key={list.path} icon={list.icon}>
+                                            <Link to={list.path}>{list.title}</Link>
+                                        </Menu.Item>
+                                    )
+                                }
                             })}
                         </SubMenu>
                     )
                 } else {
-                    return (
-                        <Menu.Item key={r.path} icon={r.icon}>
-                            <Link to={r.path}>{r.title}</Link>
-                        </Menu.Item>
-                    )
+                    if(r.auth){
+                        return (
+                            <Menu.Item key={r.path} icon={r.icon}>
+                                <Link to={r.path}>{r.title}</Link>
+                            </Menu.Item>
+                        )
+                    }
                 }
             })}
         </Menu>
