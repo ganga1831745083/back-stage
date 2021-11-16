@@ -46,6 +46,9 @@ export class Storage{
     //拿到缓存
     getItem(name:any){
         let item:any = localStorage.getItem(name);
+        if(item===null){
+            return ''
+        }
         //先将拿到的试着进行json转为对象的形式
         try{
             item = JSON.parse(item);
@@ -60,15 +63,15 @@ export class Storage{
             if(date - item.startTime > item.expires){
             //缓存过期，清除缓存，返回false
                 localStorage.removeItem(name);
-                return false;
+                return '';
             }else{
             //缓存未过期，返回值
-                localStorage.removeItem(name);
-                return item.value;
+                return JSON.stringify(item);
             }
         }else{
         //如果没有设置失效时间，直接返回值
-            return item;
+            localStorage.removeItem(name);
+            return '';
         }
     }
     //移出缓存

@@ -34,7 +34,7 @@ const FrontendAuth: React.FC<any> = (props) => {
       if(props.userStore?.username!=''){
         isLogin = true
       }
-     
+      console.log(props.userStore?.username,isLogin);
       
       const targetRouterConfig = routerConfig.find(
         (item:any) => item.path === pathname
@@ -108,14 +108,14 @@ const FrontendAuth: React.FC<any> = (props) => {
           // 非登陆状态下，路由不合法时，重定向至 404
           setStructure({
             ifRedirect:true,
-            path:"/404",
+            path:"/login",
             auth:false
           })
           return
           // return <Redirect to="/404" />;
         }
       }
-    },[])
+    },[props.location])
     // 如果该路由不用进行权限校验，登录状态下登陆页除外
     // 因为登陆后，无法跳转到登陆页
     // 这部分代码，是为了在非登陆状态下，访问不需要权限校验的路由
