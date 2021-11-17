@@ -34,8 +34,6 @@ const FrontendAuth: React.FC<any> = (props) => {
       if(props.userStore?.username!=''){
         isLogin = true
       }
-      console.log(props.userStore?.username,isLogin);
-      
       const targetRouterConfig = routerConfig.find(
         (item:any) => item.path === pathname
       );

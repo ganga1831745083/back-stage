@@ -3,7 +3,7 @@
 // val:设置state初始值时赋予的值，可不传，默认为空
 export const getVal = function (name:any,val="") {
     try {
-      if(sessionStorage.getItem(name)!=undefined && sessionStorage.getItem(name)!='' && sessionStorage.getItem(name)!=null){
+      if(sessionStorage.getItem(name)!==undefined && sessionStorage.getItem(name)!=='' && sessionStorage.getItem(name)!==null){
         return JSON.parse(sessionStorage.getItem(name)||'{}');
       }else{
         return val

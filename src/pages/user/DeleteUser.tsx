@@ -1,7 +1,7 @@
 import { Button, message, Popconfirm } from 'antd'
 import React from 'react'
 import { IAdmin } from './UserList'
-
+import { deleteUserList } from '../../api/api';
 interface IProps {
     user: IAdmin
     upDataUser: () => void
@@ -9,9 +9,15 @@ interface IProps {
 
 const DeleteUser: React.FC<IProps> = (props) => {
     const DeleteUser = () => {
-        //调用接口删除用户
-        message.success('删除成功')
-        props.upDataUser()
+        deleteUserList(props.user.user_id).then((response)=>{
+            const {code,msg,data} = response.data;
+            if(code===0){
+                message.success('删除成功')
+                props.upDataUser()
+            }else{
+                message.warn(msg)
+            }
+        })  
     }
     const cancel = () => {
         message.info('取消删除')
