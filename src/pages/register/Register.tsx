@@ -1,12 +1,25 @@
-import { Button, Checkbox, Form, Input, Space } from 'antd';
+import { Button, Checkbox, Form, Input, message, Space } from 'antd';
 import React, { useState, useEffect } from 'react';
 import './register.less'
+import { register } from '../../api/api';
 
 const Register: React.FC<any> = (props) => {
+    const click_login = ()=>{
+        window.location.href='/login'
+    }
     const [form] = Form.useForm();
     //提交表单且数据验证成功后回调事件
     const onFinish = (form: any) => {
-
+        // register(form.name,form.password).
+        register(form.name,form.password,form.tel,form.Verification).then((response:any)=>{
+            const {code,msg} = response.data;
+            if(code===0){
+                message.success("注册成功正在前往登录页面")
+                window.location.href='/login'
+            }else{
+                message.error(msg)
+            }
+        })
     }
     //提交表单且数据验证失败后回调事件	
     const onFinishFailed = (errorInfo: any) => {
@@ -56,8 +69,11 @@ const Register: React.FC<any> = (props) => {
                     rules={[{
                         required:true,
                         validator:(rule,value)=>{
+                            
+                            
                             let regu = /^1[3|4|5|7|8][0-9]\d{8}$/
-                            if (value == undefined ||regu.test(value)) {
+                            console.log(regu.test(value));
+                            if (value == undefined || !regu.test(value)) {
                                 return Promise.reject('手机号格式不对')
                             }
                             return Promise.resolve()
@@ -69,18 +85,21 @@ const Register: React.FC<any> = (props) => {
                 < Form.Item
                     label='验证码'
                     name='Verification'
+                    className="Verification"
                     rules={[{ required: true, message: '验证码不能为空' }]}
                 >
                     <Input></Input>
                 </ Form.Item>
+
+                <div className="Verification_img"></div>
                 <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                     <Space>
                         <Button type="primary" htmlType="submit">
-                            注册
-                    </Button>
-                        <Button type="primary" htmlType="reset">
-                            重置
-                    </Button>
+                            提交
+                        </Button>
+                        <Button type="primary" onClick={()=>click_login()}>
+                            登录
+                        </Button>
                     </Space>
                 </Form.Item>
             </Form>

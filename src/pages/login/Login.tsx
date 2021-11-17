@@ -1,7 +1,7 @@
 import { Button, Checkbox, Form, Input, message, Space } from 'antd';
 import React from 'react';
 import {inject,observer} from 'mobx-react'
-import { login } from '../../api/login';
+import { login } from '../../api/api';
 import  './login.less';
 // import UserStore from '../../store/UserStore'
 import {Storage} from '../../utils/storage'
@@ -10,6 +10,9 @@ const Login: React.FC<any> = (props) => {
     let storage = new Storage('');
     const [form] = Form.useForm();
     //提交表单且数据验证成功后回调事件
+    const click_register = ()=>{
+        window.location.href = '/register'
+    }
     const onFinish = (form:any)=>{
         login(form.name,form.password).then((response:any) =>{
             const {code,msg,data} = response.data;
@@ -67,7 +70,7 @@ const Login: React.FC<any> = (props) => {
                         { 
                             required:true,
                             type: 'string', 
-                            //动态验证
+                            // 动态验证
                             validator:(rule,value)=>{
                                 if(value==undefined ||value.length>0 && value.length<6){
                                     return Promise.reject('密码长度不能小于6位')
@@ -88,8 +91,8 @@ const Login: React.FC<any> = (props) => {
                         <Button type="primary" htmlType="submit">
                             登录
                         </Button>
-                        <Button type="primary" htmlType="reset">
-                            重置
+                        <Button type="primary" onClick={()=>{click_register()}}>
+                            注册
                         </Button>
                     </Space>
                 </Form.Item>

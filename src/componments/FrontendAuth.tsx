@@ -53,7 +53,7 @@ const FrontendAuth: React.FC<any> = (props) => {
       }
       if (isLogin) {
         // 如果是登陆状态，想要跳转到登陆，重定向到主页
-        if (pathname === "/login") {
+        if (pathname === "/login" || pathname=== '/register') {
           setStructure({
             ifRedirect:true,
             path:'/admin/dashboard',
