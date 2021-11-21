@@ -11,7 +11,7 @@ const Register: React.FC<any> = (props) => {
     //提交表单且数据验证成功后回调事件
     const onFinish = (form: any) => {
         // register(form.name,form.password).
-        register(form.name,form.password,form.tel,form.Verification).then((response:any)=>{
+        register(form.name,form.password,form.tel,form.Verification,form.email).then((response:any)=>{
             const {code,msg} = response.data;
             if(code===0){
                 message.success("注册成功正在前往登录页面")
@@ -63,6 +63,13 @@ const Register: React.FC<any> = (props) => {
                 >
                     <Input.Password />
                 </Form.Item>
+                <Form.Item
+                    label='邮箱'
+                    name='email'
+                    rules={[{ required: true, message: '邮箱不能为空' }]}
+                >
+                    <Input />
+                </Form.Item>
                 < Form.Item
                     label='手机号'
                     name='tel'
@@ -90,7 +97,7 @@ const Register: React.FC<any> = (props) => {
                 >
                     <Input></Input>
                 </ Form.Item>
-
+                
                 <div className="Verification_img"></div>
                 <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                     <Space>
