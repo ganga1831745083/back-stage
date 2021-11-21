@@ -1,0 +1,53 @@
+.viewHeader{
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .search{
+        width: 300px;
+    }
+    .message{
+        .user_info{
+            cursor: pointer;
+            .ant-comment-inner{
+                padding: 0;
+            }
+            .ant-comment-avatar{
+                img{
+                    width: auto;
+                    height: auto;
+                }
+            } 
+        }
+    }
+}
+.message_popover{
+    .ant-popover-inner-content{
+        padding: 0px 16px;
+    }
+    .mesasge_list{
+        cursor: pointer;
+        .ant-list-item-meta-avatar{
+            margin-right: 7px;
+        }
+        .ant-list-item:first-child{
+            padding: 12px 0 0 0;
+        }
+        .ant-list-item{
+            padding: 5px 0 0 0;
+            .ant-typography{
+                font-size: 13px;
+            }
+        }
+        .ant-list-item:last-child{
+            padding: 5px 0 12px 0;
+        }
+        .ant-list-item:hover{
+            color: lightblue;
+            .ant-typography{
+                color: lightblue;
+            }
+        }
+    }
+}
