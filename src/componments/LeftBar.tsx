@@ -8,11 +8,11 @@ const LeftBar: React.FC<any> = (props) => {
     let location = useLocation();
     return (
         <Menu theme="dark"  mode="inline" defaultSelectedKeys={[location.pathname]}>
-            {AuthRouter.map(r => {
+            {AuthRouter.map((r:any) => {
                 if (r.routes) {
                     return (
                         <SubMenu key={r.path} icon={r.icon} title={r.title} >
-                            {r.routes.map((list) => {
+                            {r.routes.map((list:any) => {
                                 if(list.auth){
                                     return(
                                         <Menu.Item key={list.path} icon={list.icon}>

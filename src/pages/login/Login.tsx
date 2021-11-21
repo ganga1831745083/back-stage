@@ -3,7 +3,6 @@ import React from 'react';
 import {inject,observer} from 'mobx-react'
 import { login } from '../../api/api';
 import  './login.less';
-// import UserStore from '../../store/UserStore'
 import {Storage} from '../../utils/storage'
 
 const Login: React.FC<any> = (props) => {
@@ -72,7 +71,7 @@ const Login: React.FC<any> = (props) => {
                             type: 'string', 
                             // 动态验证
                             validator:(rule,value)=>{
-                                if(value==undefined ||value.length>0 && value.length<6){
+                                if(value===undefined || value.length<6){
                                     return Promise.reject('密码长度不能小于6位')
                                 }
                                 return Promise.resolve()

@@ -1,5 +1,5 @@
-import { Button, Checkbox, Form, Input, message, Space } from 'antd';
-import React, { useState, useEffect } from 'react';
+import { Button, Form, Input, message, Space } from 'antd';
+import React from 'react';
 import './register.less'
 import { register } from '../../api/api';
 
@@ -53,7 +53,7 @@ const Register: React.FC<any> = (props) => {
                             type: 'string',
                             //动态验证
                             validator: (rule, value) => {
-                                if (value==undefined || value.length<6) {
+                                if (value===undefined || value.length<6) {
                                     return Promise.reject('密码至少6位')
                                 }
                                 return Promise.resolve()
@@ -80,7 +80,7 @@ const Register: React.FC<any> = (props) => {
                             
                             let regu = /^1[3|4|5|7|8][0-9]\d{8}$/
                             console.log(regu.test(value));
-                            if (value == undefined || !regu.test(value)) {
+                            if (value === undefined || !regu.test(value)) {
                                 return Promise.reject('手机号格式不对')
                             }
                             return Promise.resolve()

@@ -1,7 +1,7 @@
 import { Layout } from 'antd'
 import { Content } from 'antd/lib/layout/layout'
 import Sider from 'antd/lib/layout/Sider'
-import React, { useState } from 'react'
+import React from 'react'
 import LeftBar from './LeftBar';
 import ViewHeader from './header/ViewHeader'
 import ViewFooter from './footer/ViewFooter'

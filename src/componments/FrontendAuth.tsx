@@ -1,5 +1,5 @@
 
-import React, { useState ,useEffect, ReactNode} from "react";
+import React, { useState ,useEffect} from "react";
 import { Route, Redirect } from "react-router-dom";
 import Applayout from '../componments/Applayout'
 import {inject,observer} from 'mobx-react'
@@ -18,9 +18,9 @@ const FrontendAuth: React.FC<any> = (props) => {
     let isLogin = false
     function flatten(item: any) {
       let ary: any = []
-      item.map((i: any) => {
+      item.forEach((i: any) => {
           if (i.routes) {
-              i.routes.map((r: any) => {
+              i.routes.forEach((r: any) => {
                   ary.push(r)
               })
           } else {
@@ -31,7 +31,7 @@ const FrontendAuth: React.FC<any> = (props) => {
   }
   routerConfig = flatten(routerConfig)
     useEffect(()=>{
-      if(props.userStore?.username!=''){
+      if(props.userStore?.username!==''){
         isLogin = true
       }
       const targetRouterConfig = routerConfig.find(

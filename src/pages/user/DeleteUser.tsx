@@ -10,7 +10,7 @@ interface IProps {
 const DeleteUser: React.FC<IProps> = (props) => {
     const DeleteUser = () => {
         deleteUserList(props.user.user_id).then((response)=>{
-            const {code,msg,data} = response.data;
+            const {code,msg} = response.data;
             if(code===0){
                 message.success('删除成功')
                 props.upDataUser()

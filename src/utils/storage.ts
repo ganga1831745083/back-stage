@@ -32,12 +32,12 @@ export class Storage{
             localStorage.setItem(options.name,JSON.stringify(options));
         }else{
         //如果options.expires没有设置，就判断一下value的类型
-               let type = Object.prototype.toString.call(options.value);
+            // let type = Object.prototype.toString.call(options.value);
                //如果value是对象或者数组对象的类型，就先用JSON.stringify转一下，再存进去
-            if(Object.prototype.toString.call(options.value) == '[object Object]'){
+            if(Object.prototype.toString.call(options.value) === '[object Object]'){
                 options.value = JSON.stringify(options.value);
             }
-            if(Object.prototype.toString.call(options.value) == '[object Array]'){
+            if(Object.prototype.toString.call(options.value) === '[object Array]'){
                 options.value = JSON.stringify(options.value);
             }
             localStorage.setItem(options.name,options.value);
@@ -54,7 +54,8 @@ export class Storage{
             item = JSON.parse(item);
         }catch(error){
         //如果不行就不是json的字符串，就直接返回
-            item = item;
+            return ''
+            // item = item;
         }
         //如果有startTime的值，说明设置了失效时间
         if(item.startTime){

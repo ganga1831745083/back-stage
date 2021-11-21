@@ -1,5 +1,5 @@
 import { Button, Form, message, Space, Table } from 'antd';
-import Column from 'antd/lib/table/Column';
+// import Column from 'antd/lib/table/Column';
 import DeleteUser from './DeleteUser'
 import React, { useEffect, useState } from 'react'
 import { getUserList } from '../../api/api';
