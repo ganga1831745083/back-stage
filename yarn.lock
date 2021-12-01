@@ -3196,6 +3196,13 @@ babel-plugin-dynamic-import-node@^2.3.3:
   dependencies:
     object.assign "^4.1.0"
 
+babel-plugin-external-helpers@^6.22.0:
+  version "6.22.0"
+  resolved "https://registry.nlark.com/babel-plugin-external-helpers/download/babel-plugin-external-helpers-6.22.0.tgz#2285f48b02bd5dede85175caf8c62e86adccefa1"
+  integrity sha1-IoX0iwK9Xe3oUXXK+MYuhq3M76E=
+  dependencies:
+    babel-runtime "^6.22.0"
+
 babel-plugin-istanbul@^6.0.0:
   version "6.0.0"
   resolved "https://registry.nlark.com/babel-plugin-istanbul/download/babel-plugin-istanbul-6.0.0.tgz#e159ccdc9af95e0b570c75b4573b7c34d671d765"
@@ -3320,7 +3327,7 @@ babel-preset-react-app@^10.0.0:
     babel-plugin-macros "2.8.0"
     babel-plugin-transform-react-remove-prop-types "0.4.24"
 
-babel-runtime@^6.26.0:
+babel-runtime@^6.22.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.nlark.com/babel-runtime/download/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -7680,6 +7687,11 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.npm.taobao.org/kind-of/download/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha1-B8BQNKbDSfoG4k+jWqdttFgM5N0=
 
+kits-js@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.nlark.com/kits-js/download/kits-js-0.0.7.tgz#4ffb15729ecf4e69994e2591f3ec344496fc470c"
+  integrity sha1-T/sVcp7PTmmZTiWR8+w0RJb8Rww=
+
 kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.nlark.com/kleur/download/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
@@ -7965,6 +7977,18 @@ map-visit@^1.0.0:
   integrity sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
   dependencies:
     object-visit "^1.0.0"
+
+mapv@^2.0.56:
+  version "2.0.62"
+  resolved "https://registry.nlark.com/mapv/download/mapv-2.0.62.tgz#02489df3814b278839e0d73431ef807e647ca693"
+  integrity sha1-Akid84FLJ4g54Nc0Me+AfmR8ppM=
+  dependencies:
+    babel-plugin-external-helpers "^6.22.0"
+
+mapvgl@^1.0.0-beta.117:
+  version "1.0.0-beta.140"
+  resolved "https://registry.npmmirror.com/mapvgl/download/mapvgl-1.0.0-beta.140.tgz#921c34efbdda249a7e4853f9fa86dbe082491c7b"
+  integrity sha512-jEP194zsNtAkroOoYaWvhSmXxXKJik6rlpwAk5dGJS8+zWKgj6oMlnMooNgZ1ZLSZrGCUF3pxKIg+w9g/m4kZg==
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -10333,6 +10357,15 @@ react-app-rewired@^2.1.8:
   integrity sha1-4ZL5O5ja+WiJQY0z0+hs+GOBK1Y=
   dependencies:
     semver "^5.6.0"
+
+react-bmap@^1.0.130:
+  version "1.0.130"
+  resolved "https://registry.nlark.com/react-bmap/download/react-bmap-1.0.130.tgz#a0abcd345154c3f701bf1613a6a5e95f5207ca45"
+  integrity sha1-oKvNNFFUw/cBvxYTpqXpX1IHykU=
+  dependencies:
+    kits-js "^0.0.7"
+    mapv "^2.0.56"
+    mapvgl "^1.0.0-beta.117"
 
 react-dev-utils@^11.0.3:
   version "11.0.4"

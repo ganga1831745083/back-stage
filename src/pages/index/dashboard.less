@@ -1,0 +1,104 @@
+.dashboard_box {
+    width: 100%;
+    .blueColor {
+        color: #0dcaf0 !important;
+    }
+    .background_blue{
+        background: linear-gradient( 45deg , #17ead9, #6078ea)!important;
+    }
+    .border_left_blue{
+        border-left:3px solid #0dcaf0!important;
+    }
+    .pinkColor {
+        color:  #f41127!important;
+    }
+    .background_pink{
+        background: linear-gradient( 45deg , #f54ea2, #ff7676)!important;;
+    }
+    .border_left_pink{
+        border-left:3px solid #f41127!important;
+    }
+    .greenColor {
+        color: #17a00e !important;
+    }
+    .background_green{
+        background: linear-gradient(45deg , #00b09b, #96c93d)!important;
+    }
+    .border_left_green{
+        border-left:3px solid #17a00e!important;
+    }
+    .yellowColor {
+        color: #ffc107 !important;
+    }
+    .background_yellow{
+        background: linear-gradient(45deg , #ffdf40, #ff8359)!important;
+    }
+    .border_left_yellow{
+        border-left:3px solid #ffc107!important;
+    }
+    .dashboard_header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .dashboard_header_card {
+            border-radius: .25rem;
+            box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+            margin-bottom: 15px ;
+            cursor: pointer;
+            min-width: 250px;
+            .ant-card-body {
+                padding: 1rem 1.5rem;
+            }
+        }
+        .dashboard_header_card_content {
+            .dashboard_header_card_content_title {
+                color: #6c757d;
+            }
+            .dashboard_header_card_content_num {
+                font-size: calc(1.275rem + .3vw);
+                font-weight: 500;
+            }
+            .dashboard_header_card_content_growth {
+                font-size: 13px;
+                color: #4c5258;
+            }
+        }
+        .dashboard_header_card_ico {
+            font-size: 35px;
+            margin-left: 75px;
+            padding: 10px;
+            border-radius: 50%;
+            color: white;
+        }
+    }
+    .dashboard_body{
+        cursor: pointer;
+        // margin-top: 25px;
+        width: 100%;
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        >.ant-space-item{
+            width: 50%;
+        }
+        >.ant-space-item:nth-child(2){
+            width: 40%;
+            margin-left: 10%;
+        }
+        .dashboard_body_visit{
+            width: 100%;
+            // min-width: 300px;
+        }
+        .dashboard_body_evaluate{
+            width: 100%;
+            // min-width: 200px;
+        }
+    }
+    .dashboard_Map{
+        margin-top: 50px;
+        width: 100%;
+        .ant-space-item{
+            width: 100%;
+        }
+    }
+}
